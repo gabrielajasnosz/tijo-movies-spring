@@ -9,6 +9,16 @@ public class MovieDto implements Serializable {
     private String image;
     private Integer year;
 
+    public String getVideoId() {
+        return videoId;
+    }
+
+    public void setVideoId(String videoId) {
+        this.videoId = videoId;
+    }
+
+    private String videoId;
+
     public MovieDto() {
     }
 
@@ -43,5 +53,7 @@ public class MovieDto implements Serializable {
     public void setYear(Integer year) {
         this.year = year;
     }
+
+
 
 }

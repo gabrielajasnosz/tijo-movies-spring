@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pl.edu.pwsztar.domain.dto.CreateMovieDto;
 import pl.edu.pwsztar.domain.dto.MovieDto;
+import pl.edu.pwsztar.domain.dto.VideoDto;
 import pl.edu.pwsztar.domain.entity.Movie;
 import pl.edu.pwsztar.domain.mapper.MovieListMapper;
 import pl.edu.pwsztar.domain.mapper.MovieMapper;
@@ -35,7 +36,7 @@ public class MovieServiceImpl implements MovieService {
 
     @Override
     public List<MovieDto> findAll() {
-        List<Movie> movies = movieRepository.findAll();
+        List<Movie> movies = movieRepository.getSortedMovies();
         return movieListMapper.mapToDto(movies);
     }
 
@@ -48,6 +49,15 @@ public class MovieServiceImpl implements MovieService {
     @Override
     public void deleteMovie(Long movieId) {
         movieRepository.deleteById(movieId);
+    }
+
+    @Override
+    public VideoDto getMovieTrailer(Long movieId){
+        Movie movie=movieRepository.findMovieById(movieId);
+
+        return new VideoDto(movie.getTitle(),movie.getVideoId());
+
+
     }
 
 }

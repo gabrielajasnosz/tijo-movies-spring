@@ -20,6 +20,7 @@ public class MovieListMapper {
             movieDto.setTitle(movie.getTitle());
             movieDto.setImage(movie.getImage());
             movieDto.setYear(movie.getYear());
+            movieDto.setVideoId(movie.getVideoId());
 
             moviesDto.add(movieDto);
 

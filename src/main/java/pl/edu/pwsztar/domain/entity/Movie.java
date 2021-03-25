@@ -21,6 +21,9 @@ public class Movie implements Serializable {
     @Column(name = "year")
     private Integer year;
 
+    @Column(name = "video_id")
+    private String videoId;
+
     public Movie() {
     }
 
@@ -55,5 +58,17 @@ public class Movie implements Serializable {
     public void setYear(Integer year) {
         this.year = year;
     }
+
+
+
+    public String getVideoId() {
+        return videoId;
+    }
+
+    public void setVideoId(String videoId) {
+        this.videoId = videoId;
+    }
+
+
 
 }

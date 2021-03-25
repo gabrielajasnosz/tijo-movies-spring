@@ -13,6 +13,8 @@ public class MovieMapper {
         movie.setImage(createMovieDto.getImage());
         movie.setTitle(createMovieDto.getTitle());
         movie.setYear(createMovieDto.getYear());
+        movie.setVideoId(createMovieDto.getVideoId());
+
 
         return movie;
     }
